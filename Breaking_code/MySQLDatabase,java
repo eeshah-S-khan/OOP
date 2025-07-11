@@ -1,0 +1,17 @@
+class MySQLDatabase {
+    public void connect() {
+        System.out.println("Connected to MySQL Database");
+    }
+}
+
+class Application {
+    private MySQLDatabase database;
+
+    public Application() {
+        this.database = new MySQLDatabase();  // tightly coupled to MySQL
+    }
+
+    public void start() {
+        database.connect();
+    }
+}
